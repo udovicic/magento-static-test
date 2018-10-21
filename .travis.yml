@@ -1,0 +1,22 @@
+sudo: required
+dist: trusty
+
+services:
+  - docker
+
+matrix:
+  fast_finish: true
+
+before_script:
+  - make build
+
+script:
+  - make test
+
+after_success:
+  - if [[ "${TRAVIS_TAG}" != "" ]]; then
+    docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+    docker push udovicic/magentost:${TRAVIS_TAG};
+    docker tag udovicic/magentost:${TRAVIS_TAG} udovicic/magentost:latest;
+    docker push udovicic/magentost:latest;
+    fi

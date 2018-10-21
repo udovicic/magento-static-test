@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ruleset name="lMEQP2">
+    <description>Loose Magento 2 EQP Coding Standard</description>
+    <!-- Include PSR2 standard. -->
+    <rule ref="MEQP2">
+        <exclude name="MEQP2.PHP.ProtectedClassMember.FoundProtected"/>
+        <exclude name="PSR2.Classes.PropertyDeclaration.Underscore"/>
+    </rule>
+</ruleset>

@@ -1,0 +1,27 @@
+{
+    "name": "udovicic/magento-static-test",
+    "description": "Tools for static testing Magento 2 code",
+    "type": "project",
+	"license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Stjepan Udovicic",
+            "email": "udovicic.stjepan@gmail.com"
+        }
+    ],
+    "require": {
+        "magento/marketplace-eqp": "1.0.4"
+    },
+    "scripts": {
+        "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths ./../../magento/marketplace-eqp,./../../../src/phpcs",
+        "post-update-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths ./../..//magento/marketplace-eqp,./../../../src/phpcs"
+    },
+    "repositories": {
+        "magento": {
+            "type": "vcs",
+            "url": "https://github.com/magento/marketplace-eqp.git",
+            "no-api": true
+        }
+    }
+}
