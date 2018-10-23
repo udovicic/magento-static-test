@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ruleset name="lMEQP1">
+    <description>Loose Magento 1 EQP Coding Standard</description>
+    <!-- Include PSR2 standard. -->
+    <rule ref="MEQP1">
+        <exclude name="Generic.Arrays.DisallowShortArraySyntax.Found"/>
+        <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace"/>
+        <exclude name="MEQP1.PHP.PrivateClassMember.FoundPrivate"/>
+    </rule>
+</ruleset>

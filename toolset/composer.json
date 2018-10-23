@@ -3,7 +3,7 @@
     "description": "Tools for static testing Magento 2 code",
     "type": "project",
 	"license": "MIT",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "authors": [
         {
             "name": "Stjepan Udovicic",
