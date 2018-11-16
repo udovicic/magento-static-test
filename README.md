@@ -20,7 +20,7 @@ For example, to check `src` directory against the lMEQP2 coding standard.
 
 ```sh
 docker run --rm \
-    --volume /local/path:/project \
+    --volume `pwd`:/project \
     udovicic/magentost --standard=lMEQP2 src
 ```
 
