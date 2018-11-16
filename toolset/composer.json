@@ -3,7 +3,7 @@
     "description": "Tools for static testing Magento 2 code",
     "type": "project",
 	"license": "MIT",
-    "version": "1.0.2",
+    "version": "2.0.0",
     "authors": [
         {
             "name": "Stjepan Udovicic",
@@ -11,7 +11,8 @@
         }
     ],
     "require": {
-        "magento/marketplace-eqp": "1.0.4"
+        "magento/marketplace-eqp": "1.0.5",
+        "squizlabs/php_codesniffer": "^2.0"
     },
     "scripts": {
         "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths ./../../magento/marketplace-eqp,./../../../src/phpcs",

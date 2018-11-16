@@ -5,9 +5,9 @@
  */
 
 /**
- * Class MEQP2_Tests_SQL_CoreTablesModificationUnitTest
+ * Class MEQP2_Tests_Classes_ConstructorOperationsUnitTest
  */
-class MEQP2_Tests_SQL_CoreTablesModificationUnitTest extends AbstractSniffUnitTest
+class MEQP2_Tests_Classes_ConstructorOperationsUnitTest extends AbstractSniffUnitTest
 {
     /**
      * @inheritdoc
@@ -24,16 +24,15 @@ class MEQP2_Tests_SQL_CoreTablesModificationUnitTest extends AbstractSniffUnitTe
     {
         return [
             18 => 1,
-            23 => 1,
             28 => 1,
-            34 => 1,
-            39 => 1,
-            41 => 1,
+            36 => 1,
             44 => 1,
-            48 => 1,
-            55 => 1,
-            60 => 1,
+            53 => 1,
             64 => 1,
+            78 => 1,
+            92 => 1,
+            105 => 1,
+            117 => 1,
         ];
     }
 }

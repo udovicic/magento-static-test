@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf6328f4ef428e9f145e35c10d468559d
+class ComposerStaticInit44b864d2fdcc9e9f7b6ce36ed841021f
 {
     public static $classMap = array (
         'Generic_Sniffs_Arrays_DisallowLongArraySyntaxSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Arrays/DisallowLongArraySyntaxSniff.php',
@@ -260,7 +260,7 @@ class ComposerStaticInitf6328f4ef428e9f145e35c10d468559d
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInitf6328f4ef428e9f145e35c10d468559d::$classMap;
+            $loader->classMap = ComposerStaticInit44b864d2fdcc9e9f7b6ce36ed841021f::$classMap;
 
         }, null, ClassLoader::class);
     }

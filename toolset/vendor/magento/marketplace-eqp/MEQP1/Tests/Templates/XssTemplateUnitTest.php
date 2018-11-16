@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -43,6 +43,8 @@ class MEQP1_Tests_Templates_XssTemplateUnitTest extends AbstractSniffUnitTest
             23 => 1,
             24 => 1,
             28 => 2,
+            29 => 1,
+            30 => 2,
         ];
     }
 }

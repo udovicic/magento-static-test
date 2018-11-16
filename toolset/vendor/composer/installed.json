@@ -1,26 +1,37 @@
 [
     {
         "name": "magento/marketplace-eqp",
-        "version": "1.0.4",
-        "version_normalized": "1.0.4.0",
+        "version": "1.0.5",
+        "version_normalized": "1.0.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/magento/marketplace-eqp.git",
-            "reference": "eb8ee8d9ecd39766d340a6d11cef0a3fb5d8e130"
+            "reference": "c82070eca1075569578206430a6ef7975f7eeec1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/magento/marketplace-eqp/zipball/eb8ee8d9ecd39766d340a6d11cef0a3fb5d8e130",
-            "reference": "eb8ee8d9ecd39766d340a6d11cef0a3fb5d8e130",
+            "url": "https://api.github.com/repos/magento/marketplace-eqp/zipball/c82070eca1075569578206430a6ef7975f7eeec1",
+            "reference": "c82070eca1075569578206430a6ef7975f7eeec1",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.6.0",
+            "php": ">=5.5.0",
             "squizlabs/php_codesniffer": "2.6.2"
         },
-        "time": "2016-10-25T15:49:47+00:00",
+        "require-dev": {
+            "phpunit/phpunit": "4.1.0"
+        },
+        "time": "2017-04-11T08:57:43+00:00",
         "type": "library",
         "installation-source": "dist",
+        "scripts": {
+            "post-install-cmd": [
+                "\"vendor/bin/phpcs\" --config-set installed_paths ../../.."
+            ],
+            "post-update-cmd": [
+                "\"vendor/bin/phpcs\" --config-set installed_paths ../../.."
+            ]
+        },
         "license": [
             "MIT"
         ],

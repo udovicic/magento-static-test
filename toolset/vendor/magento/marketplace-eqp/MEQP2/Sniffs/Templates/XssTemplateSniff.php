@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace MEQP2\Sniffs\Templates;
@@ -40,4 +40,13 @@ class XssTemplateSniff extends \MEQP1\Sniffs\Templates\XssTemplateSniff
      * @var array
      */
     protected $allowedFunctions = ['count'];
+
+    /**
+     * Allowed annotations.
+     *
+     * @var string
+     */
+    protected $allowedAnnotations = [
+        '@noEscape',
+    ];
 }
