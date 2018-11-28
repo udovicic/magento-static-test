@@ -34,8 +34,8 @@ alias lmeqp2='docker run --rm --volume `pwd`:/project udovicic/magentost --stand
 In that case, you can simply use this as:
 
 ```bash
-$ lemqp1 <path_to_source> # For Magento 1
-$ lemqp3 <path_to_source> # For Magento 2
+$ lmeqp1 <path_to_source> # For Magento 1
+$ lmeqp2 <path_to_source> # For Magento 2
 ```
 
 
