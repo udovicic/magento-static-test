@@ -1,9 +1,9 @@
 {
     "name": "udovicic/magento-static-test",
-    "description": "Tools for static testing Magento 2 code",
+    "description": "Tools for static testing Magento code",
     "type": "project",
 	"license": "MIT",
-    "version": "2.0.1",
+    "version": "3.0.0",
     "authors": [
         {
             "name": "Stjepan Udovicic",
@@ -11,12 +11,16 @@
         }
     ],
     "require": {
-        "magento/marketplace-eqp": "1.0.5",
-        "squizlabs/php_codesniffer": "^2.0"
+        "magento/marketplace-eqp": "^2.0.1",
+        "squizlabs/php_codesniffer": "^3.4"
     },
     "scripts": {
-        "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths ./../../magento/marketplace-eqp,./../../../src/phpcs",
-        "post-update-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths ./../..//magento/marketplace-eqp,./../../../src/phpcs"
+        "post-install-cmd": [
+			"\"vendor/bin/phpcs\" --config-set installed_paths ./../../magento/marketplace-eqp,./../../../src/phpcs,./../../magento/magento-coding-standard"
+		],
+        "post-update-cmd": [
+			"\"vendor/bin/phpcs\" --config-set installed_paths ./../../magento/marketplace-eqp,./../../../src/phpcs,./../../magento/magento-coding-standard"
+		]
     },
     "repositories": {
         "magento": {
@@ -24,5 +28,8 @@
             "url": "https://github.com/magento/marketplace-eqp.git",
             "no-api": true
         }
+    },
+    "require-dev": {
+        "magento/magento-coding-standard": "^2.0"
     }
 }

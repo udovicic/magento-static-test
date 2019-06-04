@@ -5,14 +5,14 @@
  */
 namespace MEQP1\Sniffs\Classes;
 
-use PHP_CodeSniffer_Sniff;
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Sniffs\Sniff;
+use PHP_CodeSniffer\Files\File;
 
 /**
  * Class ObjectInstantiationSniff
  * Detects direct object instantiation via 'new' keyword.
  */
-class ObjectInstantiationSniff implements PHP_CodeSniffer_Sniff
+class ObjectInstantiationSniff implements Sniff
 {
     /**
      * Violation severity.
@@ -46,6 +46,13 @@ class ObjectInstantiationSniff implements PHP_CodeSniffer_Sniff
     ];
 
     /**
+     * Class part which is allowed to use with 'Mage_' and 'Enterprise_' prefixes.
+     *
+     * @var string
+     */
+    protected $allowedClassPart = 'Exception';
+
+    /**
      * @inheritdoc
      */
     public function register()
@@ -56,11 +63,14 @@ class ObjectInstantiationSniff implements PHP_CodeSniffer_Sniff
     /**
      * @inheritdoc
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
         $next = $phpcsFile->findNext(T_STRING, $stackPtr + 1);
         $className = $phpcsFile->getTokens()[$next]['content'];
-        if (preg_match('/^(' . implode('|', $this->disallowedClassPrefixes) . ')/i', $className)) {
+        if (preg_match('/^(' . implode(
+            '|',
+            $this->disallowedClassPrefixes
+        ) . ')((?!' . $this->allowedClassPart . ').)*$/i', $className)) {
             $phpcsFile->addWarning($this->warningMessage, $stackPtr, $this->warningCode, [$className], $this->severity);
         }
     }

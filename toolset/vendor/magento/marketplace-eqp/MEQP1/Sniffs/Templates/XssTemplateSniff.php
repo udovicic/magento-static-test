@@ -5,14 +5,14 @@
  */
 namespace MEQP1\Sniffs\Templates;
 
-use PHP_CodeSniffer_Sniff;
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Sniffs\Sniff;
+use PHP_CodeSniffer\Files\File;
 
 /**
  * Class XssTemplateSniff
  * Detects not escaped output in phtml templates.
  */
-class XssTemplateSniff implements PHP_CodeSniffer_Sniff
+class XssTemplateSniff implements Sniff
 {
     /**
      * Violation severity.
@@ -57,7 +57,7 @@ class XssTemplateSniff implements PHP_CodeSniffer_Sniff
     protected $allowedAnnotations = [];
 
     /**
-     * Magento escape methods.
+     * List of allowed methods that can follow after echo.
      *
      * @var array
      */
@@ -70,6 +70,7 @@ class XssTemplateSniff implements PHP_CodeSniffer_Sniff
         'jsQuoteEscape',
         'quoteEscape',
         'getId',
+        'displayPrices',
     ];
 
     /**
@@ -99,7 +100,7 @@ class XssTemplateSniff implements PHP_CodeSniffer_Sniff
     /**
      * PHP_CodeSniffer file.
      *
-     * @var PHP_CodeSniffer_File
+     * @var File
      */
     private $file;
 
@@ -125,7 +126,7 @@ class XssTemplateSniff implements PHP_CodeSniffer_Sniff
     /**
      * @inheritdoc
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
         $this->file = $phpcsFile;
         $this->tokens = $this->file->getTokens();
@@ -160,6 +161,10 @@ class XssTemplateSniff implements PHP_CodeSniffer_Sniff
         if ($this->tokens[$stackPtr]['code'] === T_ECHO) {
             $startOfStatement = $this->file->findPrevious(T_OPEN_TAG, $stackPtr);
             return $this->file->findPrevious(T_COMMENT, $stackPtr, $startOfStatement);
+        }
+        if ($this->tokens[$stackPtr]['code'] === T_OPEN_TAG_WITH_ECHO) {
+            $endOfStatement = $this->file->findNext([T_CLOSE_TAG, T_SEMICOLON], $stackPtr);
+            return $this->file->findNext(T_COMMENT, $stackPtr, $endOfStatement);
         }
         return false;
     }

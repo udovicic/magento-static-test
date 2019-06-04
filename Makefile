@@ -15,12 +15,17 @@ build:
 
 .PHONY: test
 test:
+	rm -f tests/*.log
 	test ! -e tests/report-lmeqp1.log
 	test ! -e tests/report-lmeqp2.log
+	test ! -e tests/report-magento2.log
 	docker run --rm udovicic/magentost:${VERSION}
 	docker run --rm --volume `pwd`/tests:/project udovicic/magentost:${VERSION} --report-file=report-lmeqp1.log --standard=lMEQP1 /project || true
 	docker run --rm --volume `pwd`/tests:/project udovicic/magentost:${VERSION} --report-file=report-lmeqp2.log --standard=lMEQP2 /project || true
+	docker run --rm --volume `pwd`/tests:/project udovicic/magentost:${VERSION} --report-file=report-magento2.log --standard=Magento2 /project || true
 	test -e tests/report-lmeqp1.log
 	test -e tests/report-lmeqp2.log
+	test -e tests/report-magento2.log
 	cat tests/report-lmeqp1.log
 	cat tests/report-lmeqp2.log
+	cat tests/report-magento2.log

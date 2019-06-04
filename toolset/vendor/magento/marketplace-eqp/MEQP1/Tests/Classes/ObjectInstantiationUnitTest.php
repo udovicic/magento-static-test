@@ -3,11 +3,14 @@
  * Copyright © Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
+namespace MEQP1\Tests\Classes;
+
+use PHP_CodeSniffer\Tests\Standards\AbstractSniffUnitTest;
 
 /**
- * Class MEQP1_Tests_Classes_ObjectInstantiationUnitTest
+ * Class ObjectInstantiationUnitTest
  */
-class MEQP1_Tests_Classes_ObjectInstantiationUnitTest extends AbstractSniffUnitTest
+class ObjectInstantiationUnitTest extends AbstractSniffUnitTest
 {
     /**
      * @inheritdoc
@@ -23,8 +26,8 @@ class MEQP1_Tests_Classes_ObjectInstantiationUnitTest extends AbstractSniffUnitT
     public function getWarningList()
     {
         return [
-            23 => 1,
-            26 => 1,
+            3 => 1,
+            6 => 1,
         ];
     }
 }

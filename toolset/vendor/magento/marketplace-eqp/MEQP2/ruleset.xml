@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <ruleset name="MEQP2">
     <description>Magento 2 EQP Coding Standard</description>
+    <!-- File extensions to be checked. -->
+    <arg name="extensions" value="php,phtml"/>
     <!-- Include PSR2 standard. -->
     <rule ref="PSR2">
         <exclude name="PSR2.Classes.PropertyDeclaration.Underscore"/>
@@ -150,6 +152,7 @@
     </rule>
     <rule ref="Generic.Files.LineLength.TooLong">
         <severity>6</severity>
+        <exclude-pattern>*.phtml</exclude-pattern>
     </rule>
     <rule ref="Generic.Formatting.DisallowMultipleStatements.SameLine">
         <severity>6</severity>
@@ -184,8 +187,7 @@
         <type>warning</type>
     </rule>
     <rule ref="Generic.PHP.DisallowShortOpenTag.EchoFound">
-        <severity>6</severity>
-        <type>warning</type>
+        <severity>0</severity>
     </rule>
     <rule ref="Generic.PHP.DisallowShortOpenTag.Found">
         <severity>6</severity>

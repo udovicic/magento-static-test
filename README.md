@@ -6,6 +6,10 @@
 
 A Docker image that utilizes a phpcs to evaluate coding standards on code.
 
+Based on:
+* [Magento coding standard 2.0.0](https://github.com/magento/magento-coding-standard)
+* [Magento EQP 2.0.1](https://github.com/magento/marketplace-eqp)
+
 ## How to use this image
 
 Basic usage.

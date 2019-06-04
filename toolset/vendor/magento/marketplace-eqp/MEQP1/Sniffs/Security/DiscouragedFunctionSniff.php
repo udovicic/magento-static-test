@@ -5,13 +5,13 @@
  */
 namespace MEQP1\Sniffs\Security;
 
-use Generic_Sniffs_PHP_ForbiddenFunctionsSniff;
+use PHP_CodeSniffer\Standards\Generic\Sniffs\PHP\ForbiddenFunctionsSniff;
 
 /**
  * Class DiscouragedFunctionSniff
  * Detects possible usage of discouraged functions.
  */
-class DiscouragedFunctionSniff extends Generic_Sniffs_PHP_ForbiddenFunctionsSniff
+class DiscouragedFunctionSniff extends ForbiddenFunctionsSniff
 {
     /**
      * Violation severity.
@@ -221,11 +221,11 @@ class DiscouragedFunctionSniff extends Generic_Sniffs_PHP_ForbiddenFunctionsSnif
         '^ssh2_.*$' => null,
         '^delete$' => null,
         '^file.*$' => null,
-        'chop' => 'rtrim()',
-        'sizeof' => 'count()',
-        'is_null' => 'strict comparison "=== null"',
-        'intval' => '(int) construction',
-        'strval' => '(string) construction',
+        '^chop$' => 'rtrim()',
+        '^sizeof$' => 'count()',
+        '^is_null$' => 'strict comparison "=== null"',
+        '^intval$' => '(int) construction',
+        '^strval$' => '(string) construction',
         '^md5$' => 'better hash functions (SHA-256, SHA-512 etc.)',
         '^unserialize$' => null,
     ];
@@ -233,7 +233,7 @@ class DiscouragedFunctionSniff extends Generic_Sniffs_PHP_ForbiddenFunctionsSnif
     /**
      * Generates warning for this sniff.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param File $phpcsFile The file being scanned.
      * @param int $stackPtr The position of the forbidden function
      *                                        in the token array.
      * @param string $function The name of the forbidden function.

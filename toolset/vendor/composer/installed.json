@@ -1,29 +1,68 @@
 [
     {
-        "name": "magento/marketplace-eqp",
-        "version": "1.0.5",
-        "version_normalized": "1.0.5.0",
+        "name": "magento/magento-coding-standard",
+        "version": "2.0.0",
+        "version_normalized": "2.0.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/magento/marketplace-eqp.git",
-            "reference": "c82070eca1075569578206430a6ef7975f7eeec1"
+            "url": "https://github.com/magento/magento-coding-standard.git",
+            "reference": "e2ed8ce8708249e37a296fc594e9bf22e4658c68"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/magento/marketplace-eqp/zipball/c82070eca1075569578206430a6ef7975f7eeec1",
-            "reference": "c82070eca1075569578206430a6ef7975f7eeec1",
+            "url": "https://api.github.com/repos/magento/magento-coding-standard/zipball/e2ed8ce8708249e37a296fc594e9bf22e4658c68",
+            "reference": "e2ed8ce8708249e37a296fc594e9bf22e4658c68",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6.0",
+            "squizlabs/php_codesniffer": "^3.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
+        },
+        "time": "2019-04-17T21:14:05+00:00",
+        "type": "phpcodesniffer-standard",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "OSL-3.0",
+            "AFL-3.0"
+        ],
+        "description": "A set of Magento specific PHP CodeSniffer rules."
+    },
+    {
+        "name": "magento/marketplace-eqp",
+        "version": "2.0.1",
+        "version_normalized": "2.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/magento/marketplace-eqp.git",
+            "reference": "3303dfcd656f2f1d74274520f9770f6313cce5b2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/magento/marketplace-eqp/zipball/3303dfcd656f2f1d74274520f9770f6313cce5b2",
+            "reference": "3303dfcd656f2f1d74274520f9770f6313cce5b2",
             "shasum": ""
         },
         "require": {
             "php": ">=5.5.0",
-            "squizlabs/php_codesniffer": "2.6.2"
+            "squizlabs/php_codesniffer": "3.*"
         },
         "require-dev": {
             "phpunit/phpunit": "4.1.0"
         },
-        "time": "2017-04-11T08:57:43+00:00",
-        "type": "library",
+        "time": "2019-01-16T15:06:16+00:00",
+        "type": "phpcodesniffer-standard",
         "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "MEQP\\": "MEQP/",
+                "MEQP1\\": "MEQP1/",
+                "MEQP2\\": "MEQP2/"
+            }
+        },
         "scripts": {
             "post-install-cmd": [
                 "\"vendor/bin/phpcs\" --config-set installed_paths ../../.."
@@ -39,67 +78,40 @@
     },
     {
         "name": "squizlabs/php_codesniffer",
-        "version": "2.6.2",
-        "version_normalized": "2.6.2.0",
+        "version": "3.4.2",
+        "version_normalized": "3.4.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-            "reference": "4edb770cb853def6e60c93abb088ad5ac2010c83"
+            "reference": "b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/4edb770cb853def6e60c93abb088ad5ac2010c83",
-            "reference": "4edb770cb853def6e60c93abb088ad5ac2010c83",
+            "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8",
+            "reference": "b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8",
             "shasum": ""
         },
         "require": {
             "ext-simplexml": "*",
             "ext-tokenizer": "*",
             "ext-xmlwriter": "*",
-            "php": ">=5.1.2"
+            "php": ">=5.4.0"
         },
         "require-dev": {
-            "phpunit/phpunit": "~4.0"
+            "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
         },
-        "time": "2016-07-13T23:29:13+00:00",
+        "time": "2019-04-10T23:49:02+00:00",
         "bin": [
-            "scripts/phpcs",
-            "scripts/phpcbf"
+            "bin/phpcs",
+            "bin/phpcbf"
         ],
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "2.x-dev"
+                "dev-master": "3.x-dev"
             }
         },
         "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "CodeSniffer.php",
-                "CodeSniffer/CLI.php",
-                "CodeSniffer/Exception.php",
-                "CodeSniffer/File.php",
-                "CodeSniffer/Fixer.php",
-                "CodeSniffer/Report.php",
-                "CodeSniffer/Reporting.php",
-                "CodeSniffer/Sniff.php",
-                "CodeSniffer/Tokens.php",
-                "CodeSniffer/Reports/",
-                "CodeSniffer/Tokenizers/",
-                "CodeSniffer/DocGenerators/",
-                "CodeSniffer/Standards/AbstractPatternSniff.php",
-                "CodeSniffer/Standards/AbstractScopeSniff.php",
-                "CodeSniffer/Standards/AbstractVariableSniff.php",
-                "CodeSniffer/Standards/IncorrectPatternException.php",
-                "CodeSniffer/Standards/Generic/Sniffs/",
-                "CodeSniffer/Standards/MySource/Sniffs/",
-                "CodeSniffer/Standards/PEAR/Sniffs/",
-                "CodeSniffer/Standards/PSR1/Sniffs/",
-                "CodeSniffer/Standards/PSR2/Sniffs/",
-                "CodeSniffer/Standards/Squiz/Sniffs/",
-                "CodeSniffer/Standards/Zend/Sniffs/"
-            ]
-        },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "BSD-3-Clause"
@@ -111,7 +123,7 @@
             }
         ],
         "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
-        "homepage": "http://www.squizlabs.com/php-codesniffer",
+        "homepage": "https://github.com/squizlabs/PHP_CodeSniffer",
         "keywords": [
             "phpcs",
             "standards"

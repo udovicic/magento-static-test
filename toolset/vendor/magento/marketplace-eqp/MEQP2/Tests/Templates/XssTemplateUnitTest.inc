@@ -47,9 +47,13 @@ echo $var;
     $block->escapeXssInUrl("bla bla");
 ?>
 <?php /* @noEscape */ echo '\'' . $code . '\',\'' . $block->escapeQuote($data['parentSymbol']) . '\''; ?>
+<?= /* @noEscape */ '\'' . $code . '\',\'' . $block->escapeQuote($data['parentSymbol']) . '\''; ?>
 <?= $block->getExtendedElement($switchAttributeCode)->toHtml(); ?>
 <?= $block->escapeHtml($_filter->getFilter()->getClearLinkText()) ?>
 <?php echo ($card->default) ? $block->escapeHtml(__('Yes')) : $block->escapeHtml(__('No')); ?>
 <?php echo $res = $var . $tt . $var ? 1 : 2 ? $block->getExtendedElement($switchAttributeCode)->toHtml() : 5; ?>
 <?php echo $var % 2; ?>
 <?php echo $var ** 2;?>
+<?php echo $block->escapeJs($js); ?>
+<?php echo $block->escapeCss($css); ?>
+<?php echo $block->getJsLayout($jsLayout); ?>

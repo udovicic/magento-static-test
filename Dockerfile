@@ -4,7 +4,7 @@ MAINTAINER udovicic <udovicic.stjepan@gmail.com>
 
 ADD toolset /toolset
 ENV PATH="/toolset/vendor/bin:${PATH}"
-RUN phpcs --config-set installed_paths ./../../magento/marketplace-eqp,./../../../src/phpcs
+RUN phpcs --config-set installed_paths ./../../magento/marketplace-eqp,./../../../src/phpcs,./../../magento/magento-coding-standard
 
 RUN rm -rf /var/cache/apk/* /var/tmp/* /tmp/*
 

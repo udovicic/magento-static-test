@@ -6,4 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'MEQP\\' => array($vendorDir . '/magento/marketplace-eqp/MEQP'),
+    'MEQP2\\' => array($vendorDir . '/magento/marketplace-eqp/MEQP2'),
+    'MEQP1\\' => array($vendorDir . '/magento/marketplace-eqp/MEQP1'),
 );

@@ -1,8 +1,10 @@
 <?xml version="1.0"?>
 <ruleset name="MEQP1">
     <description>Magento EQP Coding Standard</description>
+    <!-- File extensions to be checked. -->
+    <arg name="extensions" value="php,phtml"/>
     <!-- Do not check code in the lib folder. -->
-    <exclude-pattern>*/lib/*</exclude-pattern>
+    <exclude-pattern type="relative">^lib/*</exclude-pattern>
     <!-- Include the whole Zend standard. -->
     <rule ref="Zend"/>
     <rule ref="Generic.Files.LineLength">
@@ -15,9 +17,6 @@
         <exclude-pattern>*.phtml</exclude-pattern>
     </rule>
     <rule ref="Squiz.PHP.DiscouragedFunctions"/>
-    <rule ref="Generic.Arrays.DisallowShortArraySyntax.Found">
-        <severity>10</severity>
-    </rule>
     <rule ref="Generic.Files.OneClassPerFile.MultipleFound">
         <severity>10</severity>
     </rule>
@@ -42,6 +41,10 @@
         <severity>10</severity>
         <type>error</type>
         <exclude-pattern>*.phtml</exclude-pattern>
+    </rule>
+    <rule ref="Generic.Arrays.DisallowShortArraySyntax.Found">
+        <severity>8</severity>
+        <type>warning</type>
     </rule>
     <rule ref="Generic.Classes.DuplicateClassName.Found">
         <severity>8</severity>
@@ -145,7 +148,7 @@
         <type>warning</type>
     </rule>
     <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine">
-        <severity>6</severity>
+        <severity>0</severity>
         <type>warning</type>
     </rule>
     <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceSpacing">
