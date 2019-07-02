@@ -8,4 +8,5 @@
     <rule ref="Magento2"/>
     <rule ref="Squiz.Commenting.FunctionComment"/>
     <rule ref="Squiz.Commenting.FunctionCommentThrowTag"/>
+    <rule ref="VariableAnalysis" />
 </ruleset>
