@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ruleset name="mcga">
+    <description>Code sniffs used to make code great again</description>
+    <rule ref="MEQP2">
+        <exclude name="MEQP2.PHP.ProtectedClassMember.FoundProtected"/>
+        <exclude name="PSR2.Classes.PropertyDeclaration.Underscore"/>
+    </rule>
+    <rule ref="Magento2"/>
+</ruleset>
