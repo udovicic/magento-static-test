@@ -1,0 +1,21 @@
+diff --git a/src/Util/Common.php b/src/Util/Common.php
+index e65c923..9ff25c8 100644
+--- a/src/Util/Common.php
++++ b/src/Util/Common.php
+@@ -406,14 +406,14 @@ class Common
+             switch ($lowerVarType) {
+             case 'bool':
+             case 'boolean':
+-                return 'boolean';
++                return 'bool';
+             case 'double':
+             case 'real':
+             case 'float':
+                 return 'float';
+             case 'int':
+             case 'integer':
+-                return 'integer';
++                return 'int';
+             case 'array()':
+             case 'array':
+                 return 'array';
