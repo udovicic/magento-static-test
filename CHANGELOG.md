@@ -1,4 +1,10 @@
-3.1.0
+# 3.1.1
+
+* Comment is no longer required for @throws DocBlock
+* Comment of @throws no longer require period at the end
+* Comment of @throws can start with lower case letter
+
+# 3.1.0
 
 * Introduced new standard, **mcga**, which is supposed to combine _MEQP2_ and _Magento2_ standards + a lot of our own to fix common mistakes. This one is supposed to be frequently expanded
 * _mcga_ checks if DocBlock properly describes input and output parameters of the functions, including @throw

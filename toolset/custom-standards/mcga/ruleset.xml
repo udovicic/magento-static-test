@@ -27,6 +27,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <rule ref="Squiz.Commenting.FunctionComment">
         <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
         <exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamType" />
+        <exclude name="Squiz.Commenting.FunctionComment.EmptyThrows" />
+        <exclude name="Squiz.Commenting.FunctionComment.ThrowsNoFullStop" />
+        <exclude name="Squiz.Commenting.FunctionComment.ThrowsNotCapital" />
     </rule>
     <rule ref="Squiz.Commenting.FunctionCommentThrowTag"/>
     <rule ref="VariableAnalysis">
