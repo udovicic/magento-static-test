@@ -8,5 +8,9 @@
     <rule ref="Magento2"/>
     <rule ref="Squiz.Commenting.FunctionComment"/>
     <rule ref="Squiz.Commenting.FunctionCommentThrowTag"/>
-    <rule ref="VariableAnalysis" />
+    <rule ref="VariableAnalysis">
+        <properties>
+            <property name="validUndefinedVariableNames" value="block"/>
+        </properties>
+    </rule>
 </ruleset>
