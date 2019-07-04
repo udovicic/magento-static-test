@@ -1,3 +1,8 @@
+# 3.1.2
+
+* Comment for function parameter no longer require period at the end
+* Comment for function parameter can start with lower case letter
+
 # 3.1.1
 
 * Comment is no longer required for @throws DocBlock
