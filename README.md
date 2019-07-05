@@ -26,17 +26,16 @@ For example, to check `src` directory against the lMEQP2 coding standard.
 ```bash
 docker run --rm \
     --volume `pwd`:/project \
-    udovicic/magentost --standard=mcga src
+    udovicic/magentost --standard=mcga --extensions=js,php,phtml src
 ```
 
 A personal recommendation is to add following to your set of aliases:
 
 ```bash
-alias lmeqp1='docker run --rm --volume `pwd`:/project udovicic/magentost --standard=lMEQP1'
-alias lmeqp2='docker run --rm --volume `pwd`:/project udovicic/magentost --standard=lMEQP2'
-alias magento2='docker run --rm --volume `pwd`:/project udovicic/magentost --standard=Magento2'
-alias mcga='docker run --rm --volume `pwd`:/project udovicic/magentost --standard=mcga'
-
+alias lmeqp1='docker run --rm --volume `pwd`:/project udovicic/magentost --standard=lMEQP1 --extensions=js,php,phtml'
+alias lmeqp2='docker run --rm --volume `pwd`:/project udovicic/magentost --standard=lMEQP2 --extensions=js,php,phtml'
+alias magento2='docker run --rm --volume `pwd`:/project udovicic/magentost --standard=Magento2 --extensions=js,php,phtml'
+alias mcga='docker run --rm --volume `pwd`:/project udovicic/magentost --standard=mcga --extensions=js,php,phtml'
 ```
 
 In that case, you can simply use this as:
