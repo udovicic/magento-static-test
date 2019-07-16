@@ -1,3 +1,7 @@
+# 3.1.3
+
+* Tagging change, meta version
+
 # 3.1.2
 
 * Comment for function parameter no longer require period at the end
