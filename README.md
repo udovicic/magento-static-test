@@ -32,16 +32,19 @@ docker run --rm \
 A personal recommendation is to add following to your set of aliases:
 
 ```bash
-alias lmeqp1='docker run --rm --volume `pwd`:/project udovicic/magentost --standard=lMEQP1 --extensions=js,php,phtml'
-alias lmeqp2='docker run --rm --volume `pwd`:/project udovicic/magentost --standard=lMEQP2 --extensions=js,php,phtml'
-alias magento2='docker run --rm --volume `pwd`:/project udovicic/magentost --standard=Magento2 --extensions=js,php,phtml'
 alias mcga='docker run --rm --volume `pwd`:/project udovicic/magentost --standard=mcga --extensions=js,php,phtml'
+alias mcga-fix='docker run --rm --entrypoint "phpcbf" --volume `pwd`:/project udovicic/magentost --standard=mcga --extensions=js,php,phtml'
 ```
 
 In that case, you can simply use this as:
 
 ```bash
 $ mcga <path_to_source>
+```
+
+And to fix what can be automaticall done:
+```bash
+$ mcga-fix <path_to_source>
 ```
 
 
