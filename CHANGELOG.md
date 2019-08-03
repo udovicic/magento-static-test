@@ -1,3 +1,7 @@
+# 3.1.5
+
+* Update of base Magento coding standard to version 3
+
 # 3.1.4
 
 * Tagging change, meta version
