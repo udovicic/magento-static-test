@@ -18,37 +18,45 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-namespace mcga\Tests\Commenting;
+namespace mcga\Sniffs\Commenting;
 
-use PHP_CodeSniffer\Tests\Standards\AbstractSniffUnitTest;
+use PHP_CodeSniffer\Sniffs\Sniff;
+use PHP_CodeSniffer\Files\File;
 
 /**
- * Class ConstantsPHPDocFormattingUnitTest
+ * Requires removal of original copyright notice when copy files over.
  */
-class ConstantsPHPDocFormattingUnitTest extends AbstractSniffUnitTest
+class MagentoCopyrightNoticeSniff implements Sniff
 {
-    /**
-     * @inheritdoc
-     */
-    public function getErrorList()
+
+    public function register()
     {
-        return [];
+        return [
+            T_DOC_COMMENT_STRING
+        ];
     }
 
+
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
-    public function getWarningList($testFile = '')
+    public function process(File $phpcsFile, $stackPtr)
     {
-        if ($testFile === 'ConstantsPHPDocFormattingUnitTest.1.inc') {
-            return [];
+        $tokens = $phpcsFile->getTokens();
+        $commentLine = strtolower($tokens[$stackPtr]['content']);
+
+        if (strpos($commentLine, 'copyright') === false) {
+            return;
         }
 
-        return [
-            5 => 1,
-            8 => 1,
-            15 => 1,
-            20 => 1
-        ];
+        if (strpos($commentLine, 'magento') === false) {
+            return;
+        }
+
+        $phpcsFile->addWarning(
+            'Original Magento copyright notice must be removed',
+            $stackPtr,
+            'InvalidCopyrightNotice'
+        );
     }
 }

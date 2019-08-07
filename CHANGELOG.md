@@ -1,3 +1,7 @@
+# 3.1.6
+
+* Ban Magento copyright notice in custom code
+
 # 3.1.5
 
 * Update of base Magento coding standard to version 3

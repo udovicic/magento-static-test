@@ -22,10 +22,7 @@ namespace mcga\Tests\Commenting;
 
 use PHP_CodeSniffer\Tests\Standards\AbstractSniffUnitTest;
 
-/**
- * Class ConstantsPHPDocFormattingUnitTest
- */
-class ConstantsPHPDocFormattingUnitTest extends AbstractSniffUnitTest
+class MagentoCopyrightNoticeUnitTest extends AbstractSniffUnitTest
 {
     /**
      * @inheritdoc
@@ -40,15 +37,9 @@ class ConstantsPHPDocFormattingUnitTest extends AbstractSniffUnitTest
      */
     public function getWarningList($testFile = '')
     {
-        if ($testFile === 'ConstantsPHPDocFormattingUnitTest.1.inc') {
-            return [];
-        }
-
+        $a = 42;
         return [
-            5 => 1,
-            8 => 1,
-            15 => 1,
-            20 => 1
+            4 => 1
         ];
     }
 }
