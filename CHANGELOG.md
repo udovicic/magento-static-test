@@ -1,6 +1,7 @@
 # 3.1.6
 
 * Ban Magento copyright notice in custom code
+* declare(strict_types) must have one empty line between <?php and itself
 
 # 3.1.5
 
