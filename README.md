@@ -1,13 +1,13 @@
 ![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)
 
-[![Build Status](https://travis-ci.org/udovicic/magento-static-test.svg?branch=master)](https://travis-ci.org/udovicic/magento-static-test)
+[![Build Status](https://travis-ci.com/udovicic/magento-static-test.svg?branch=master)](https://travis-ci.com/udovicic/magento-static-test)
 
 ## What is this?
 
 A Docker image that utilizes a phpcs to evaluate coding standards on code.
 
 Based on:
-* [Magento coding standard 3.0.0](https://github.com/magento/magento-coding-standard)
+* [Magento coding standard 6](https://github.com/magento/magento-coding-standard)
 * [Magento EQP 2.0.1](https://github.com/magento/marketplace-eqp)
 * [Variable Analysis](https://github.com/sirbrillig/phpcs-variable-analysis)
 

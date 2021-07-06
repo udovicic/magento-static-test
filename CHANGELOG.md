@@ -1,3 +1,10 @@
+# 3.2.0
+
+* Update Magento coding standards to version 6
+* Update code sniffer to latest version
+* Add escaper and secureRenderer to the lsit of allowed undefined variables
+* Set image to be built for PHP 7.4
+
 # 3.1.6
 
 * Ban Magento copyright notice in custom code
