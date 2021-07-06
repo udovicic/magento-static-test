@@ -36,7 +36,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <rule ref="Squiz.Commenting.FunctionCommentThrowTag"/>
     <rule ref="VariableAnalysis">
         <properties>
-            <property name="validUndefinedVariableNames" value="block"/>
+            <property name="validUndefinedVariableNames" value="block secureRenderer escaper"/>
         </properties>
     </rule>
 </ruleset>
