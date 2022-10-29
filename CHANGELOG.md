@@ -1,3 +1,9 @@
+# 27.0
+
+* Update Magento coding standard to version 27
+* Remove autotagging to `latest`
+* Change in versioning format
+
 # 3.2.0
 
 * Update Magento coding standards to version 6

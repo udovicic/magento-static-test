@@ -1,0 +1,13 @@
+diff --git a/tests/Standards/AbstractSniffUnitTest.php b/tests/Standards/AbstractSniffUnitTest.php
+index c050a0c..206cc37 100644
+--- a/tests/Standards/AbstractSniffUnitTest.php
++++ b/tests/Standards/AbstractSniffUnitTest.php
+@@ -52,7 +52,7 @@ abstract class AbstractSniffUnitTest extends TestCase
+      *
+      * @return void
+      */
+-    protected function setUp()
++    protected function setUp(): void
+     {
+         $class = get_class($this);
+         $this->standardsDir = $GLOBALS['PHP_CODESNIFFER_STANDARD_DIRS'][$class];

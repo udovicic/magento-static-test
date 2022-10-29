@@ -1,6 +1,6 @@
 language: php
 php:
-  - 7.3
+  - 8.1
 
 services:
   - docker
@@ -16,11 +16,9 @@ script:
 
 after_success:
   - if [[ "${TRAVIS_TAG}" != "" ]]; then
-    GENERAL_VERSION=`grep "version" toolset/composer.json | awk -F ":" '{ print $2 }' | sed 's/[", ]//g' | awk -F "." '{print $1 "." $2 }'`;
+    GENERAL_VERSION=`grep "version" toolset/composer.json | awk -F ":" '{ print $2 }' | sed 's/[", ]//g' | awk -F "." '{print $1}'`;
     docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
     docker push udovicic/magentost:${TRAVIS_TAG};
-    docker tag udovicic/magentost:${TRAVIS_TAG} udovicic/magentost:latest;
-    docker push udovicic/magentost:latest;
     docker tag udovicic/magentost:${TRAVIS_TAG} udovicic/magentost:${GENERAL_VERSION};
     docker push udovicic/magentost:${GENERAL_VERSION};
     fi

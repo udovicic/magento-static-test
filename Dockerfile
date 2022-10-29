@@ -1,10 +1,10 @@
-FROM php:7.4-alpine
+FROM php:8.1-alpine
 
 MAINTAINER udovicic <udovicic.stjepan@gmail.com>
 
 ADD toolset /toolset
 ENV PATH="/toolset/vendor/bin:${PATH}"
-RUN phpcs --config-set installed_paths ./../../magento/marketplace-eqp,./../../../custom-standards,./../../magento/magento-coding-standard,./../../sirbrillig/phpcs-variable-analysis
+RUN phpcs --config-set installed_paths ./../../magento/marketplace-eqp,./../../../custom-standards,./../../magento/magento-coding-standard,./../../sirbrillig/phpcs-variable-analysis,./../../phpcompatibility/php-compatibility
 
 RUN rm -rf /var/cache/apk/* /var/tmp/* /tmp/*
 

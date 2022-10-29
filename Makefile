@@ -15,6 +15,7 @@ test:
 	test ! -e tests/report-lmeqp1.log
 	test ! -e tests/report-lmeqp2.log
 	test ! -e tests/report-magento2.log
+	test ! -e tests/report-mcga.log
 	docker run --rm udovicic/magentost:${VERSION}
 	docker run --rm udovicic/magentost:${VERSION} -i
 	docker run --rm --volume `pwd`/tests:/project udovicic/magentost:${VERSION} --report-file=report-lmeqp1.log --standard=lMEQP1 /project || true
@@ -24,6 +25,7 @@ test:
 	test -e tests/report-lmeqp1.log
 	test -e tests/report-lmeqp2.log
 	test -e tests/report-magento2.log
+	test -e tests/report-mcga.log
 	cat tests/report-lmeqp1.log
 	cat tests/report-lmeqp2.log
 	cat tests/report-magento2.log

@@ -7,7 +7,7 @@
 A Docker image that utilizes a phpcs to evaluate coding standards on code.
 
 Based on:
-* [Magento coding standard 6](https://github.com/magento/magento-coding-standard)
+* [Magento coding standard 27](https://github.com/magento/magento-coding-standard)
 * [Magento EQP 2.0.1](https://github.com/magento/marketplace-eqp)
 * [Variable Analysis](https://github.com/sirbrillig/phpcs-variable-analysis)
 
@@ -26,14 +26,14 @@ For example, to check `src` directory against the lMEQP2 coding standard.
 ```bash
 docker run --rm \
     --volume `pwd`:/project \
-    udovicic/magentost --standard=mcga --extensions=js,php,phtml src
+    udovicic/magentost:latest --standard=mcga --extensions=js,php,phtml src
 ```
 
 A personal recommendation is to add following to your set of aliases:
 
 ```bash
-alias mcga='docker run --rm --volume `pwd`:/project udovicic/magentost --standard=mcga --extensions=js,php,phtml'
-alias mcga-fix='docker run --rm --entrypoint "phpcbf" --volume `pwd`:/project udovicic/magentost --standard=mcga --extensions=js,php,phtml'
+alias mcga='docker run --rm --volume `pwd`:/project udovicic/magentost:latest --standard=mcga --extensions=js,php,phtml'
+alias mcga-fix='docker run --rm --entrypoint "phpcbf" --volume `pwd`:/project udovicic/magentost:latest --standard=mcga --extensions=js,php,phtml'
 ```
 
 In that case, you can simply use this as:

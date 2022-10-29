@@ -1,0 +1,26 @@
+diff --git a/MEQP1/Sniffs/Exceptions/DirectThrowSniff.php b/MEQP1/Sniffs/Exceptions/DirectThrowSniff.php
+index f6ce9bd..80e5d5e 100644
+--- a/MEQP1/Sniffs/Exceptions/DirectThrowSniff.php
++++ b/MEQP1/Sniffs/Exceptions/DirectThrowSniff.php
+@@ -57,7 +57,7 @@ class DirectThrowSniff implements Sniff
+                 $this->warningMessage,
+                 $stackPtr,
+                 $this->warningCode,
+-                $posOfException,
++                [$posOfException],
+                 $this->severity
+             );
+         }
+diff --git a/MEQP1/Sniffs/Exceptions/NamespaceSniff.php b/MEQP1/Sniffs/Exceptions/NamespaceSniff.php
+index b36fffe..671861f 100644
+--- a/MEQP1/Sniffs/Exceptions/NamespaceSniff.php
++++ b/MEQP1/Sniffs/Exceptions/NamespaceSniff.php
+@@ -64,7 +64,7 @@ class NamespaceSniff implements Sniff
+                     $this->errorMessage,
+                     $stackPtr,
+                     $this->errorCode,
+-                    $exceptionClassName,
++                    [$exceptionClassName],
+                     $this->severity
+                 );
+             }
