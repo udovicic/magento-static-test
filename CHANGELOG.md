@@ -1,3 +1,6 @@
+# 27.1
+* Removal of `Missing short description` test
+
 # 27.0
 
 * Update Magento coding standard to version 27
