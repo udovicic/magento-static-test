@@ -1,3 +1,7 @@
+# 31.1
+
+* Update VariableAnalysis package
+
 # 31.0
 
 * Update Magento coding standard to version 31
